@@ -1,0 +1,56 @@
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h3 class="m-0 text-dark">Display Record</h3>
+                </div><!-- /.col -->
+
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <!-- Small boxes (Stat box) -->
+            <div class="row">
+                <div class="card card-primary col-md-12">
+                    <table class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Last Name</th>
+                                    <th>Father Name</th>
+                                    <th>Cource</th>
+                                    <th>Roll No</th>
+                                    <th>College Name</th>
+                                    <th>Mobile</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let mydata of showdata">
+                                    <td>{{mydata.name}}</td>
+                                    <td>{{mydata.lastName}}</td>
+                                    <td>{{mydata.fatherName}}</td>
+                                    <td>{{mydata.cource}}</td>
+                                    <td>{{mydata.rollno}}</td>
+                                    <td>{{mydata.collegeName}}</td>
+                                    <td>{{mydata.mobile}}</td>
+                                    <td><a [routerLink]="['/edit',mydata.id]" class="btn btn-info">Edit</a></td>
+                                    <td><a [routerLink]="['/delete',mydata.mobile]" class="btn btn-danger">Delete</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
