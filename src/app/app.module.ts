@@ -13,7 +13,8 @@ import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DisplayComponent } from './display/display.component';
 import { EditComponent } from './edit/edit.component';
-import { DeleteComponent } from './delete/delete.component'; 
+import { DeleteComponent } from './delete/delete.component';
+import { LoginComponent } from './login/login.component'; 
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { DeleteComponent } from './delete/delete.component';
     CreateComponent,
     DisplayComponent,
     EditComponent,
-    DeleteComponent
+    DeleteComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

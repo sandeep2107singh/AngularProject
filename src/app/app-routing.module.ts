@@ -5,18 +5,21 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { CreateComponent } from './create/create.component';
 import { DisplayComponent } from './display/display.component';
 import { EditComponent } from './edit/edit.component';
-import { Component } from '@fullcalendar/core';
 import { DeleteComponent } from './delete/delete.component';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
   {
     path:"",
-    redirectTo: "dashboard",
+    redirectTo: "login",
     pathMatch: "full"
   },
 
-
+ {
+   path:"login",
+   component:LoginComponent
+ },
 
   {
     path:"dashboard",

@@ -1,6 +1,6 @@
-<app-header></app-header>
-<app-sidebar></app-sidebar>
+<app-header *ngIf="manageLogin"></app-header>
+<app-sidebar *ngIf="manageLogin"></app-sidebar>
 
-<router-outlet></router-outlet>
-
-<app-footer></app-footer>
+    
+    <router-outlet></router-outlet>
+<app-footer *ngIf="manageLogin"></app-footer>
