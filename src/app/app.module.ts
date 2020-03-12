@@ -14,7 +14,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { DisplayComponent } from './display/display.component';
 import { EditComponent } from './edit/edit.component';
 import { DeleteComponent } from './delete/delete.component';
-import { LoginComponent } from './login/login.component'; 
+import { LoginComponent } from './login/login.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { LogoutComponent } from './logout/logout.component'; 
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { LoginComponent } from './login/login.component';
     DisplayComponent,
     EditComponent,
     DeleteComponent,
-    LoginComponent
+    LoginComponent,
+    RegistrationComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

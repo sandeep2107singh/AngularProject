@@ -1,0 +1,89 @@
+<body class="register-page" style="min-height: 500.391px;">
+    <div class="register-box">
+       
+      <div class="card">
+        <div class="card-body register-card-body">
+          <p class="login-box-msg">Register a new member</p>
+    
+          <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()"  autocomplete="off">
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Full name" formControlName="username" [ngClass]="{'is-invalid':submitted &amp;&amp; registrationForm.controls.username.errors}">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-user"></span>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="submitted &amp;&amp; registrationForm.controls.username.errors" class="text-danger">
+                <div *ngIf="registrationForm.controls.username.errors.required">Username is required</div>
+            </div>
+            <div class="input-group mb-3">
+              <input type="password" class="form-control" placeholder="Password" formControlName="password" [ngClass]="{'is-invalid':submitted &amp;&amp; registrationForm.controls.password.errors}">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-lock"></span>
+                </div>
+              </div>
+            </div>
+
+            <div *ngIf="submitted &amp;&amp; registrationForm.controls.password.errors" class="text-danger">
+                <div *ngIf="registrationForm.controls.password.errors.required">Password is required</div>
+            </div>
+
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Email" formControlName="email_id" [ngClass]="{'is-invalid':submitted &amp;&amp; registrationForm.controls.email_id.errors}">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-envelope"></span>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="submitted &amp;&amp; registrationForm.controls.email_id.errors" class="text-danger">
+                <div *ngIf="registrationForm.controls.email_id.errors.required">Email Id is required</div>
+            </div>
+
+            <div class="input-group mb-3">
+              <input type="mobile" class="form-control" placeholder="Mobile No" formControlName="mobile" [ngClass]="{'is-invalid':submitted &amp;&amp; registrationForm.controls.mobile.errors}">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-mobile"></span>
+                </div>
+              </div>
+            </div>
+
+            <div *ngIf="submitted &amp;&amp; registrationForm.controls.mobile.errors" class="text-danger">
+                <div *ngIf="registrationForm.controls.mobile.errors.required">Mobile Number is required</div>
+            </div>
+
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Status" formControlName="status" [ngClass]="{'is-invalid':submitted &amp;&amp; registrationForm.controls.status.errors}">
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-status"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div *ngIf="submitted &amp;&amp; registrationForm.controls.status.errors" class="text-danger">
+                <div *ngIf="registrationForm.controls.status.errors.required">Status is required</div>
+            </div>
+
+            <div class="row">
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary btn-block">Register</button>
+              </div>
+            
+            </div>
+          </form>
+    
+         
+    
+          <a href="../" class="text-center">I already have a member</a>
+        </div>
+        <!-- /.form-box -->
+      </div><!-- /.card -->
+    </div>
+
+    
+    
+    </body>

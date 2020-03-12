@@ -16,6 +16,9 @@ export class AppComponent {
         if (event instanceof NavigationStart) {
           if (event['url'] == '/login' || event['url'] == '/' || event['url'] == '') {
             this.manageLogin = false;
+          }
+          if (event['url'] == '/registration' || event['url'] == '/' || event['url'] == '') {
+            this.manageLogin = false;
           } else {
             this.manageLogin = true;
           }

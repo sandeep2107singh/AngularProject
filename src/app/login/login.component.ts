@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { SessionService } from '../session.service';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from "@angular/router";
@@ -15,29 +15,32 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
   submitted = false;
-  responseData:any;
-  constructor(private formBuilder: FormBuilder, private http: HttpClient, private router: Router) {}
- 
+  responseData: any;
+  constructor(private formBuilder: FormBuilder, private http: HttpClient, private router: Router,private session:SessionService) { }
+
   ngOnInit(): void {
+    //this.session.isLogin();
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required],
     });
   }
- 
+
   onSubmit(formAllData: any) {
-    let requestBody:any={};
-    requestBody=JSON.stringify(this.loginForm.value);
+    this.submitted = true;
+    let requestBody: any = {};
+    requestBody = JSON.stringify(this.loginForm.value);
     console.log(requestBody);
-    this.http.post('http://localhost:8080/user/login',requestBody).subscribe(data=>{
-       this.responseData=data;
-       if(this.responseData.success==true){
-        this.router.navigate(['/dashboard']);
-       }else{
-         Swal.fire("invalid user name and password");
-       }
-       
-    });
+    if (this.loginForm.valid) {
+      this.http.post('http://localhost:8080/user/login', requestBody).subscribe(data => {
+        this.responseData = data;
+        if (this.responseData.success == true) {
+          this.router.navigate(['/dashboard']);
+        } else {
+          Swal.fire("invalid username & password");
+        }
+      });
+    }
   }
 
 

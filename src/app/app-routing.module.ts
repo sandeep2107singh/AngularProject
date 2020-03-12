@@ -7,6 +7,9 @@ import { DisplayComponent } from './display/display.component';
 import { EditComponent } from './edit/edit.component';
 import { DeleteComponent } from './delete/delete.component';
 import { LoginComponent } from './login/login.component';
+import { Component } from '@fullcalendar/core';
+import { RegistrationComponent } from './registration/registration.component';
+import { LogoutComponent } from './logout/logout.component';
 
 
 const routes: Routes = [
@@ -20,7 +23,15 @@ const routes: Routes = [
    path:"login",
    component:LoginComponent
  },
-
+ {
+   path:"logout",
+   component:LogoutComponent
+ },
+  
+ {
+   path:"registration",
+   component:RegistrationComponent
+ },
   {
     path:"dashboard",
     component:DashboardComponent
